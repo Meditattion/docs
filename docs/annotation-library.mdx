@@ -46,6 +46,16 @@ import ReactCanvasAnnotation from "react-canvas-annotation";
 ## [Types](https://github.com/denvash/react-canvas-annotation/blob/master/src/interfaces/ICanvasAnnotation.ts)
 
 ```ts
+export enum LabelType {
+  RECTANGLE = "RECTANGLE",
+  POLYGON = "POLYGON",
+}
+
+export type LabelsData = {
+  labelRects: LabelRect[];
+  labelPolygons: LabelPolygon[];
+};
+
 export interface ICanvasAnnotation {
   annotationType: LabelType;
   className?: string;

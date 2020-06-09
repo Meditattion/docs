@@ -1,0 +1,61 @@
+---
+id: annotation-library
+title: Annotation Library
+---
+
+A canvas annotation library for React.
+
+![Preview](/img/annotation-library-preview.png)
+
+- [Github Repo](https://github.com/denvash/react-canvas-annotation)
+- [Demo](https://denvash.github.io/react-canvas-annotation/)
+- [Demo Code Example](https://denvash.github.io/react-canvas-annotation/example/src/App.js)
+
+## Overview
+
+An annotation component implemented with React.
+Built on [Canvas API](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API)
+
+- Supports **Rectangles** and **Polygons** shapes.
+- Supports **zoom**, **dragging** and more.
+
+## Install
+
+```bash
+yarn add react-canvas-annotation
+```
+
+## [Usage](https://denvash.github.io/react-canvas-annotation/example/src/App.js)
+
+```js
+import ReactCanvasAnnotation from "react-canvas-annotation";
+
+<ReactCanvasAnnotation
+  zoom={zoom}
+  imageFile={imageFile}
+  labels={labels}
+  onChange={setLabels}
+  annotationType={annotationType}
+  isImageDrag={isImageDrag}
+  onMouseOut={onMouseOut}
+  onHover={onHover}
+  onClick={onClick}
+/>;
+```
+
+## [Types](https://github.com/denvash/react-canvas-annotation/blob/master/src/interfaces/ICanvasAnnotation.ts)
+
+```ts
+export interface ICanvasAnnotation {
+  annotationType: LabelType;
+  className?: string;
+  imageFile: File;
+  labels: LabelsData;
+  onChange?: (labelsData: LabelsData) => void;
+  zoom?: number;
+  isImageDrag?: boolean;
+  onHover?: (id: string) => void;
+  onClick?: (id: string) => void;
+  onMouseOut?: (id: string) => void;
+}
+```

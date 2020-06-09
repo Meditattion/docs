@@ -1,0 +1,12 @@
+---
+id: user-manual
+title: Instructions
+---
+
+import useBaseUrl from "@docusaurus/useBaseUrl";
+
+export const Image = ({ width = "100%", src }) => (
+  <img style={{ width }} src={useBaseUrl(src)} />
+);
+
+<Image src={"img/ss-1"} />

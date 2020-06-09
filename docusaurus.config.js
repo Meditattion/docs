@@ -39,9 +39,6 @@ module.exports = {
           // Please change this to your repo.
           editUrl: "https://github.com/meditattion/docs/edit",
         },
-        theme: {
-          customCss: require.resolve("./src/css/custom.css"),
-        },
       },
     ],
   ],

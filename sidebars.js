@@ -3,22 +3,11 @@ module.exports = {
     Introduction: ["intro", "architecture"],
     "User Manual": ["user-manual"],
     "Developer Manual": [
-      "developer-intro",
-      {
-        type: "category",
-        label: "Core",
-        items: [
-          "quick-start",
-          "backend-setup",
-          "backend-structure",
-          "backend-constraints",
-          "backend-seed",
-        ],
-      },
+      "annotation-library",
       {
         type: "category",
         label: "Dashboard",
-        items: ["frontend-structure", "frontend-setup"],
+        items: ["dashboard-structure", "dashboard-setup"],
       },
     ],
   },

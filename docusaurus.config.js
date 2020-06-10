@@ -2,8 +2,8 @@ module.exports = {
   title: "Meditattion",
   tagline:
     "Annotation tool for Image segmentation masks, bounding boxes and classification labels",
-  url: "https://Meditattion.github.io",
-  baseUrl: "/pages/Meditattion/docs/",
+  url: "https://meditattion-docs.netlify.app/",
+  baseUrl: "/",
   favicon: "img/favicon.ico",
   organizationName: "Meditattion", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.

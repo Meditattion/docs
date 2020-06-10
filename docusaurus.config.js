@@ -3,7 +3,7 @@ module.exports = {
   tagline:
     "Annotation tool for Image segmentation masks, bounding boxes and classification labels",
   url: "https://Meditattion.github.io",
-  baseUrl: "/docs/",
+  baseUrl: "/",
   favicon: "img/favicon.ico",
   organizationName: "Meditattion", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.

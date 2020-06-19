@@ -3,17 +3,167 @@ id: dashboard-structure
 title: Structure
 ---
 
-This project bootstrapped with [Gatsby starter](https://github.com/denvash/gatsby-tailwind-styled-components-storybook-starter).
+This project is bootstrapped with [create-react-app](https://create-react-app.dev/docs/getting-started/).
 
-## [Gatsby](https://www.gatsbyjs.org/)
+## [Create react app](https://create-react-app.dev/docs/getting-started/)
 
-Gatsby is a free and open source framework based on React that helps developers build blazing fast websites and apps.
+Create React App is an officially supported way to create single-page React applications. It offers a modern build setup with no configuration.
 
-## [Storybook](https://storybook.js.org/)
+## [Redux](https://redux.js.org/)
 
-Storybook is an open source tool for developing UI components in isolation for React, Vue, and Angular. It makes building stunning UIs organized and efficient.
+We managed a global state with redux , aside of each react hook's state.
 
-## Structure
+>Reducers and initial state
 
-This project structure derives from [Gatsby Project Structure
-](https://www.gatsbyjs.org/docs/gatsby-project-structure/) and [Storybook CSF components](https://storybook.js.org/docs/formats/component-story-format/).
+```js
+ {
+    Images:{container: [],currentImage: ""},
+    Labels: { container: [], searchQuery: '', dummyNewLabel: true,newCanvasLabel:false ,currentNewLabelID:0,
+        currentHover: {tool:"",id:""},currentMouseOut: {tool:"",id:""},canvasLabelCurds:{top:60,left:0}},
+    Tools: {
+      currentSelector:"classification",
+      boundingBox: {
+        isSelected: false,
+        labels: {}, userLabels: {}, pendingLabels: {}
+      },
+      polygon: {
+        isSelected: false,
+        labels: {}, userLabels:{}, pendingLabels:{}
+      },
+      classification: {
+        isSelected: true,
+        labels: {},
+          userLabels:{},
+          pendingLabels:{}
+      }
+    },
+      Toggles:{
+          imagesVisible: true,
+          labelsVisible: true,
+          classificationLabelsIsVisible:true,
+          boundingBoxLabelsIsVisible:false,
+          polygonLabelsIsVisible:false,
+          moveToolIsSelected:false,
+          pointerToolIsSelected:true
+      },
+      Output:{
+        currentSelector: "classification",
+          container:{}
+    }
+  }
+```
+
+>actions
+
+```js
+const actions = {
+  toggleMenu: menu => ({
+    type: 'TOGGLE_MENU',
+    menu
+  }),
+  toggleCustomLabelContainer:tool=>({
+    type:"TOGGLE_LABEL_CONTAINER",
+    tool
+  }),
+  openLabelsContainer:tool=>({
+    type:"OPEN_LABELS_CONTAINER",
+    tool
+  }),
+  addDummyLabel: () => ({
+    type: 'ADD_NEW_DUMMY_LABEL'
+  }),
+  closeDummyLabel: () => ({
+    type: 'CLOSE_DUMMY_LABEL'
+  })
+  ,
+  addCanvasLabel: (id) => ({
+    type: 'ADD_NEW_CANVAS_LABEL',
+    id
+  }),
+  closeCanvasLabel: () => ({
+    type: 'CLOSE_CANVAS_LABEL'
+  })
+  ,
+  addLabel: (label,imageID,tool,props={}) => ({
+    type: 'ADD_LABEL',
+    label,
+    imageID,
+    tool,
+    props
+  }),
+  deleteLabel: labelKey => ({
+    type: 'DELETE_LABEL',
+    payload: labelKey
+  }),
+  searchLabel: query => ({
+    type: 'SEARCH_LABEL',
+    payload: query
+  }),
+  selectorChange: (oldSelector, newSelector) => ({
+    type: 'SELECTOR_CHANGE',
+    oldSelector,
+    newSelector
+  }),
+  loadImages: (images) => ({
+    type: 'LOAD_IMAGES',
+    images
+  }),
+  loadLabels: (labels,tool="classification") => ({
+    type: 'LOAD_LABELS',
+    labels,
+    tool
+  }),
+  imageChange: (imageName) => ({
+    type: 'IMAGE_CHANGE',
+    imageName
+  }),
+  setCanvasLabelCurds:(top,left)=>({
+    type:'CANVAS_LABELS_CURDS',
+    top,
+    left
+  }),
+  addPendingLabel:(label,imageID,tool)=>({
+    type:'ADD_PENDING_LABEL',
+    label,
+    imageID,
+    tool
+  }),
+  removeLabel:(imageID,id,tool)=>({
+    type:'REMOVE_LABEL',
+    imageID,
+    id,
+    tool
+  }),
+  removePendingLabel:(imageID,id,tool)=>({
+    type:'REMOVE_PENDING_LABEL',
+    imageID,
+    id,
+    tool
+  }),
+  removeLoadedLabel:(tool,id)=>({
+    type:'REMOVE_LOADED_LABEL',
+    tool,
+    id
+  }),
+  increaseLabelsId:()=>({
+    type:'INC_LABEL_ID'
+  }),
+  currentHoverId:(tool,id)=>({
+    type:'CURRENT_HOVER_ID',
+    tool,
+    id
+  }),
+  currentMouseOutId:(tool,id)=>({
+    type:'CURRENT_MOUSEOUT_ID',
+    tool,
+    id
+  }),
+  moveToolToggle:()=>({
+    type:'MOVE_TOOL_TOGGLE'
+  })
+}
+```
+
+
+
+

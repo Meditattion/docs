@@ -1,12 +1,101 @@
 ---
 id: user-manual
-title: Instructions
+title: Instruction
 ---
 
-import useBaseUrl from "@docusaurus/useBaseUrl";
 
-export const Image = ({ width = "100%", src }) => (
-  <img style={{ width }} src={useBaseUrl(src)} />
-);
 
-<Image src={"img/ss-1"} />
+## Overview
+The UI is divided into 4 main components:
+
+![Preview](/img/overview.png)
+
+
+
+## 1) Images
+
+Start by importing images :
+
+![Preview](/gif/upload.gif)
+
+You can now import suggestions:
+
+![Preview](/gif/importSug.gif)
+
+<p style={{color:`red`}}><b>** note: the suggestions you are importing depends on the current tool(section Tools bar) ** </b></p>
+
+You can now browse through the images and see the labels in the labels menu (section Labels):
+
+![Preview](/gif/showSug.gif)
+
+## 2) Tools bar
+
+Tools bar containes the following tools:
+
+> Zoom In/Out
+
+![Preview](/gif/zoom.gif)
+
+>Move
+
+![Preview](/gif/move.gif)
+
+>Point
+
+![Preview](/gif/point.gif)
+
+<p style={{color:`red`}}><b>** note: in order to use annotation tools, you need to select the point tool. ** </b></p>
+
+>Export
+
+![Preview](/gif/export.gif)
+
+>Bounding Box
+
+![Preview](/gif/bb.gif)
+
+>Segmentation
+
+![Preview](/gif/seg.gif)
+
+
+>Classification
+
+![Preview](/gif/clas.gif)
+
+## 3) Canvas
+
+The canvas shows shapes of only current annotation tool:
+
+![Preview](/gif/current.gif)
+
+
+You can modify the shapes you draw on the canvas:
+
+![Preview](/gif/modify2.gif)
+
+You can either accept or ignore suggested shape:
+
+![Preview](/gif/sugF.gif)
+
+
+## 4) Labels
+
+When a shape is drawn on the canvas, an input pops out in the labels menu,
+You can either add it , or delete it:
+
+![Preview](/gif/label.gif)
+
+Each category shows the number of saved labels ,you can see the saved Labels by clicking on the category:
+
+![Preview](/gif/see.gif)
+
+
+When hovering over the shapes on the canvas, the label connected to the shape is highlighted in the labels menu:
+
+![Preview](/gif/hover.gif)
+
+
+
+
+

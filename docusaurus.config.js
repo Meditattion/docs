@@ -4,15 +4,15 @@ module.exports = {
     "Annotation tool for Image segmentation masks, bounding boxes and classification labels",
   url: "https://meditattion-docs.netlify.app/",
   baseUrl: "/",
-  favicon: "img/favicon.ico",
+  favicon: "img/icon.png",
   organizationName: "Meditattion", // Usually your GitHub org/user name.
   projectName: "docs", // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: "Meditattion",
+      title: "",
       logo: {
         alt: "Meditattion Logo",
-        src: "img/logo.svg",
+        src: "img/logo.png",
       },
       links: [
         {
